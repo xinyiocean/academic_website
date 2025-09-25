@@ -1,0 +1,52 @@
+html {
+  background-color: #d2e9ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:16px
+}
+
+body {
+  background-color: #DFECFA;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 2rem;
+  height: 100vh;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem; 
+  margin: 0.5rem 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem; 
+}
+
+/* Control Bars (buttons, inputs, etc.) */
+button, input[type="range"] {
+  font-size: 1.2rem; /* Slightly bigger font for controls */
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}

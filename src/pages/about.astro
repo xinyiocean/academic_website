@@ -1,4 +1,17 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = "About Me";
+
+const identity = {
+  name: "Xinyi Li",
+  email: "xinyi.li.ocean[at]outlook[dot]com",
+  interestsTech: "inverse problems, modeling and data assimilation",
+  interestsAcademic: "short-term sea-air processes (e.g., tropical cyclones, ocean mixing and storm surges)",
+};
+
+const processing = true;
+const bioColor = "navy";
 
 ---
 
@@ -8,8 +21,15 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
+		<title>{pageTitle}</title>
+        <style define:vars={{bioColor}}>
+            h1 {
+                color: black;
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+        </style>	
+    </head>
 	<body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
@@ -17,15 +37,24 @@
         <a href="/publications/">Publications</a>
         <a href="/data-and-codes/">Data and Codes</a>
         
-		<h1>About Me</h1>
-        <p>I am a master's student majoring in physical oceanography. I'm passionate about technical 
-            issues in oceanic and atmospheric research, including inverse problems, modeling and data 
-            assimilation. I have general interests in short-term sea-air processes (e.g., 
-            tropical cyclones, ocean mixing and storm surges) and I'm still trying to figure out my 
-            major interest. It's my goal to apply and develop advanced methods (e.g., machine learning) 
-            for ocean-related hazard forecasting and become an cross-disciplinary researcher.
+		<h1>{pageTitle}</h1>
+		<h2>{identity.name}</h2>
+		<h3>{identity.email}</h3>
+        {processing && <h2>This page is in process!</h2>}
+        <p>
+            I am a master's student majoring in physical oceanography. 
         </p>
-
+        <ul>
+              <li>
+                I'm passionate about technical issues oceanic and atmospheric research, including {identity.interestsTech}.
+              </li>
+              <li>
+                I have general interests in {identity.interestsAcademic} and I'm still trying to figure out my major interest. 
+              </li>
+              <li>
+                It's my goal to apply and develop advanced methods (e.g., machine learning) for ocean-related hazard forecasting and become an cross-disciplinary researcher.
+              </li>
+        </ul>
         <p>Besides scientific research, I'm an amateur guitar player, a song writer and a game developer.
             Maybe one day I'll produce my own album and publish my game. I'll definitely own 2 cats in 
             the future when I am settled down. Before that, I consider myself as a world traveller.
