@@ -1,12 +1,14 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = "About Me";
 
 const identity = {
   name: "Xinyi Li",
   email: "xinyi.li.ocean[at]outlook[dot]com",
-  interestsTech: "inverse problems, modeling and data assimilation",
+  interestsTech: "inverse problems, modeling and data assimilation, especially the reconstruction and prediction of ocean subsurface structures",
   interestsAcademic: "short-term sea-air processes (e.g., tropical cyclones, ocean mixing and storm surges)",
 };
 
@@ -31,22 +33,18 @@ const bioColor = "navy";
         </style>	
     </head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/data-and-codes/">Data and Codes</a>
+        <Header />
         
 		<h1>{pageTitle}</h1>
+    {processing && <h2>This page is in process!</h2>}
 		<h2>{identity.name}</h2>
 		<h3>{identity.email}</h3>
-        {processing && <h2>This page is in process!</h2>}
         <p>
             I am a master's student majoring in physical oceanography. 
         </p>
         <ul>
               <li>
-                I'm passionate about technical issues oceanic and atmospheric research, including {identity.interestsTech}.
+                I'm passionate about technical issues in oceanic and atmospheric research, including {identity.interestsTech}.
               </li>
               <li>
                 I have general interests in {identity.interestsAcademic} and I'm still trying to figure out my major interest. 
@@ -63,5 +61,9 @@ const bioColor = "navy";
         <h2>My Bio</h2>
         <p>M.Sc., Physical Oceanography, Ocean University of China (2023-Present)</p>
         <p>B.Sc., Oceanography, Ocean University of China (2019-2023)</p>
+        <Footer />
+ 		    <script>
+   			  import "../scripts/menu.js";
+  		  </script>
 	</body>
 </html>
